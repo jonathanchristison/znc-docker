@@ -13,7 +13,7 @@ ARG MAKEFLAGS=""
 ENV ZNC_VERSION 1.6.5
 
 RUN set -x \
-    && adduser -S znc \
+    && adduser -S znc --gid 0 \
     && addgroup -S znc \
     && apk add --no-cache --virtual runtime-dependencies \
         ca-certificates \
@@ -48,5 +48,5 @@ RUN set -x \
 COPY docker-entrypoint.sh /
 
 VOLUME /znc-data
-
+USER znc
 ENTRYPOINT ["/docker-entrypoint.sh"]
