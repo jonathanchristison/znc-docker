@@ -13,7 +13,7 @@ ARG MAKEFLAGS=""
 ENV ZNC_VERSION 1.6.5
 
 RUN set -x \
-    && adduser -S znc --gid 0 \
+    && adduser -S znc -g 0 \
     && addgroup -S znc \
     && apk add --no-cache --virtual runtime-dependencies \
         ca-certificates \
