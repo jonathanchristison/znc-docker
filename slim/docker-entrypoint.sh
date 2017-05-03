@@ -18,8 +18,8 @@ cd /
 
 # Make sure $DATADIR is owned by znc user. This affects ownership of the
 # mounted directory on the host machine too.
-chown -R znc:root "$DATADIR" || exit 1
-chmod 700 "$DATADIR" || exit 2
+#chown -R znc:root "$DATADIR" || exit 1
+chmod 755 "$DATADIR" || exit 2
 
 # ZNC itself responds to SIGTERM, and reaps its children, but whatever was
 # started via *shell module is not guaranteed to reap their children.
